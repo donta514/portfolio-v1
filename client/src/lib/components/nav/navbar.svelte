@@ -23,19 +23,19 @@
 				<nav aria-label="Global" class="hidden md:block">
 					<ul class="flex items-center gap-6 text-sm">
 						<li>
-							<a class="text-white-500 transition hover:text-white-500/75" href="/"> About Me </a>
+							<a class="text-white-500 transition hover:text-white-500/75" href="/about"> About Me </a>
 						</li>
 
 						<li>
-							<a class="text-white-500 transition hover:text-white-500/75" href="/"> Work </a>
+							<a class="text-white-500 transition hover:text-white-500/75" href="/work"> Work </a>
 						</li>
 
 						<li>
-							<a class="text-white-500 transition hover:text-white-500/75" href="/"> Projects </a>
+							<a class="text-white-500 transition hover:text-white-500/75" href="/projects"> Projects </a>
 						</li>
 
 						<li>
-							<a class="text-white-500 transition hover:text-white-500/75" href="/"> Contact </a>
+							<a class="text-white-500 transition hover:text-white-500/75" href="/contact"> Contact </a>
 						</li>
 					</ul>
 				</nav>
