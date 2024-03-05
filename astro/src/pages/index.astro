@@ -1,22 +1,47 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ContactCard from "../components/ContactCard.astro";
+import IntroCard from "../components/IntroCard.astro";
+import MediaCard from "../components/MediaCard.astro";
+import ProjectOne from "../components/ProjectOne.astro";
+import ProjectTwo from "../components/ProjectTwo.astro";
+import ProjectThree from "../components/ProjectThree.astro";
 ---
 
 <Layout title="Donta Smith - Developer, Designer.">
   <Nav />
-  <main></main>
+  <main>
+    <div class="wrapper">
+      <AboutMe />
+      <ContactCard />
+      <IntroCard />
+      <MediaCard />
+      <ProjectOne />
+      <ProjectTwo />
+      <ProjectThree />
+    </div>
+  </main>
 </Layout>
 
 <style lang="scss">
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
+    width: var(--breakpoint-xl);
     max-width: calc(100% - 2rem);
     color: white;
     font-size: 20px;
     line-height: 1.6;
+    .wrapper {
+      display: grid;
+      margin: 0 auto;
+      max-width: 1200px;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: minmax(100px, auto);
+      gap: 1rem;
+    }
     h1 {
       font-size: 4rem;
       font-weight: 700;
