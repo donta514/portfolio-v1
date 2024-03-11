@@ -14,20 +14,34 @@ import ProjectThree from "../components/ProjectThree.astro";
   <Nav />
   <main>
     <div class="wrapper">
-      <AboutMe />
-      <ContactCard />
-      <IntroCard />
-      <MediaCard />
-      <ProjectOne />
-      <ProjectTwo />
-      <ProjectThree />
+      <div class="aboutMe grid-col-span-2">
+        <AboutMe />
+      </div>
+      <div class="introCard">
+        <IntroCard />
+      </div>
+      <div class="projectOne">
+        <ProjectOne />
+      </div>
+      <div class="mediaCard">
+        <MediaCard />
+      </div>
+      <div class="projectTwo">
+        <ProjectTwo />
+      </div>
+      <div class="projectThree">
+        <ProjectThree />
+      </div>
+      <div class="contactCard">
+        <ContactCard />
+      </div>
     </div>
   </main>
 </Layout>
 
 <style lang="scss">
   main {
-    margin: auto;
+    margin-inline: auto;
     padding: 1rem;
     width: var(--breakpoint-xl);
     max-width: calc(100% - 2rem);
@@ -36,11 +50,45 @@ import ProjectThree from "../components/ProjectThree.astro";
     line-height: 1.6;
     .wrapper {
       display: grid;
-      margin: 0 auto;
-      max-width: 1200px;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: minmax(100px, auto);
-      gap: 1rem;
+      max-width: calc(100% - 2rem);
+      grid-template-columns: repeat(5, 1fr);
+      // grid-template-rows: minmax(100px, auto);
+      gap: 1.25rem;
+      .aboutMe {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
+      .introCard {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
+      .contactCard {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
+      .mediaCard {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
+      .projectOne {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
+      .projectTwo {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
+      .projectThree {
+        border: 3px solid white;
+        border-radius: var(--border-radius);
+        padding: calc(1.5rem - 1px);
+      }
     }
     h1 {
       font-size: 4rem;
