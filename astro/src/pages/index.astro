@@ -43,7 +43,6 @@ import ProjectThree from "../components/ProjectThree.astro";
   main {
     position: relative;
     color: white;
-    font-size: 20px;
     line-height: 1.6;
     top: 16px;
     .wrapper {
@@ -54,35 +53,24 @@ import ProjectThree from "../components/ProjectThree.astro";
       align-items: center;
       // max-height: 80vh;
       height: 80svh;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
+      // grid-template-columns: repeat(2, 1fr);
+      // grid-template-rows: repeat(6, 1fr);
       // grid-template-rows: minmax(100px, auto);
       gap: 1.25rem;
       .aboutMe {
-        grid-column: span 2;
-        grid-row: span 2;
       }
       .introCard {
       }
       .projectOne {
-        grid-column: 4;
-        grid-row: span 2;
       }
       .mediaCard {
       }
       .projectTwo {
-        grid-row: 2;
-        grid-row: span 2;
       }
       .projectThree {
       }
-    }
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      margin-bottom: 1em;
+      .contactCard {
+      }
     }
   }
 </style>

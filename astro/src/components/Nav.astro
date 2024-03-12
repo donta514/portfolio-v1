@@ -23,7 +23,12 @@ import { Image } from "astro:assets";
       navItems.forEach((navItem) => {
         navItem.classList.remove("active");
       });
+      item.classList.add("active");
 
+      const rect = item.getBoundingClientRect();
+      const offsetLeft =
+        rect.left - indicator.parentElement.getBoundingClientRect().left;
+      const width = item
     });
   });
 </script>
@@ -41,15 +46,19 @@ import { Image } from "astro:assets";
   </div>
   <div class="nav-item">
     <div class="nav-items-select"></div>
-    <div class="nav-items">All</div>
-    <div class="nav-items">About</div>
-    <div class="nav-items">Projects</div>
-    <div class="nav-items">Contact</div>
+    <div class="nav-items all">All</div>
+    <div class="nav-items about">About</div>
+    <div class="nav-items projects">Projects</div>
+    <div class="nav-items contact">Contact</div>
     <!-- <div class="nav-items-4">Resume</div> -->
   </div>
   <div class="nav-links">
-    <Image src={githubImg} alt="" width={24} height={24} quality={"high"} />
-    <Image src={linkedinImg} alt="" width={24} height={24} quality={"high"} />
+    <a href="https://github.com/donta514">
+      <Image src={githubImg} alt="" width={24} height={24} quality={"high"} />
+    </a>
+    <a href="http://linkedin.com/in/dontasmith">
+      <Image src={linkedinImg} alt="" width={24} height={24} quality={"high"} />
+    </a>
     <!-- <Image src={instagramImg} alt="" width={24} height={24} quality={"high"} /> -->
   </div>
 </nav>
