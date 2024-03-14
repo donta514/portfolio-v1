@@ -1,8 +1,35 @@
 ---
-import Card from "./Card.astro"
+import Card from "./Card.astro";
+import { Image } from "astro:assets";
+import myPhoto from "../assets/professional-image.jpg";
 ---
 
 <Card>
-    <div class="aboutMe">about me - Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eos eaque minus rerum veniam, dolores exercitationem modi recusandae error molestiae aperiam, at laborum, sapiente possimus vitae sequi totam facere voluptatum?</div>
+  <div class="aboutMe">
+    <div class="aboutMe-col-1">Hello, my name is Donta Smith</div>
+    <div class="aboutMe-col-2">
+      <Image
+        class="img"
+        src={myPhoto}
+        alt="my professional photo"
+        quality={"max"}
+        width={250}
+      />
+    </div>
+  </div>
 </Card>
 
+<style lang="scss">
+  .aboutMe {
+    display: flex;
+    width: 100%;
+    &-col-1 {
+      margin-right: auto;
+    }
+    &-col-2 {
+      .img {
+        height: 100%
+      }
+    }
+  }
+</style>

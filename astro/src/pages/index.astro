@@ -23,9 +23,6 @@ import ProjectThree from "../components/ProjectThree.astro";
       <div class="projectOne">
         <ProjectOne />
       </div>
-      <div class="mediaCard">
-        <MediaCard />
-      </div>
       <div class="projectTwo">
         <ProjectTwo />
       </div>
@@ -35,33 +32,49 @@ import ProjectThree from "../components/ProjectThree.astro";
       <div class="contactCard">
         <ContactCard />
       </div>
+      <div class="mediaCard">
+        <MediaCard />
+      </div>
     </div>
   </main>
 </Layout>
 
 <style lang="scss">
+  $breakpointXs: 320px;
+  $breakpointSm: 576px;
+  $breakpointMd: 768px;
+  $breakpointLg: 992px;
+  $breakpointXl: 1200px;
+  $breakpointXxl: 1840px;
+
   main {
     position: relative;
     color: white;
-    line-height: 1.6;
+    line-height: 1.5;
     top: 16px;
     .wrapper {
       display: grid;
-      width: var(--breakpoint-xl);
+      width: $breakpointXl;
       max-width: calc(100% - 2rem);
       margin-inline: auto;
       align-items: center;
-      // max-height: 80vh;
-      height: 80svh;
-      // grid-template-columns: repeat(2, 1fr);
-      // grid-template-rows: repeat(6, 1fr);
-      // grid-template-rows: minmax(100px, auto);
+      height: 100svh;
       gap: 1.25rem;
       .aboutMe {
+        @media screen and (min-width: $breakpointLg) {
+          // display: grid;
+          // grid-row: span 4 / span 4;
+          // grid-column: span 3 / span 3;
+          // grid-template-rows: repeat(8, minmax(0, 1fr));
+          // grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
       }
       .introCard {
       }
       .projectOne {
+        grid-row: span 2 / span 2;
+
+
       }
       .mediaCard {
       }
