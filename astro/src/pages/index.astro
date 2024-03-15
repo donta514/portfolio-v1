@@ -13,7 +13,7 @@ import ProjectThree from "../components/ProjectThree.astro";
 <Layout title="Donta Smith - Developer, Designer.">
   <Nav />
   <main>
-    <div class="wrapper">
+    <section class="wrapper">
       <div class="aboutMe">
         <AboutMe />
       </div>
@@ -35,7 +35,7 @@ import ProjectThree from "../components/ProjectThree.astro";
       <div class="mediaCard">
         <MediaCard />
       </div>
-    </div>
+    </section>
   </main>
 </Layout>
 
@@ -50,8 +50,7 @@ import ProjectThree from "../components/ProjectThree.astro";
   main {
     position: relative;
     color: white;
-    line-height: 1.5;
-    top: 16px;
+    top: 2rem;
     .wrapper {
       display: grid;
       width: $breakpointXl;
@@ -73,8 +72,6 @@ import ProjectThree from "../components/ProjectThree.astro";
       }
       .projectOne {
         grid-row: span 2 / span 2;
-
-
       }
       .mediaCard {
       }

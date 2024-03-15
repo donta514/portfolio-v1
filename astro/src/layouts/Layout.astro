@@ -22,6 +22,19 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global lang="scss">
+  :root {
+    --accent: rgb(136, 58, 234);
+    --accent-light: rgb(224, 204, 250);
+    --accent-dark: rgb(49, 10, 101);
+    --accent-gradient: linear-gradient(
+      to right,
+      var(--accent-dark),
+      var(--accent),
+      var(--accent-light)
+    );
+    --border-radius: 32px;
+  }
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -31,9 +44,10 @@ const { title } = Astro.props;
   html,
   body {
     font-family: system-ui, sans-serif;
+    line-height: 1.5;
+
     // font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
     font-size: 1rem;
-    // background: #13151a;
     background: #0d1117;
     background-image: url("src/assets/Pattern.svg");
     background-size: cover;

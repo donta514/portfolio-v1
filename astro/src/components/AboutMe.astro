@@ -6,14 +6,21 @@ import myPhoto from "../assets/professional-image.jpg";
 
 <Card>
   <div class="aboutMe">
-    <div class="aboutMe-col-1">Hello, my name is Donta Smith</div>
+    <div class="aboutMe-col-1">
+      <p>Hey, I'm</p>
+      <h1>Donta Smith</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+        veniam delectus soluta totam molestias temporibus optio ipsa architecto
+        maiores repudiandae.
+      </p>
+    </div>
     <div class="aboutMe-col-2">
       <Image
         class="img"
         src={myPhoto}
         alt="my professional photo"
         quality={"max"}
-        width={250}
       />
     </div>
   </div>
@@ -21,14 +28,31 @@ import myPhoto from "../assets/professional-image.jpg";
 
 <style lang="scss">
   .aboutMe {
-    display: flex;
-    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+    place-content: center;
+    place-items: center;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      width: 100%;
+    }
     &-col-1 {
+      display: grid;
+      align-items: center;
       margin-right: auto;
+      gap: 0.5rem;
+      p {
+      }
+      h1 {
+        color: var(--accent-light);
+        font-size: clamp(2.5rem, 2.0455rem + 2.2727vw, 3.75rem);
+      }
     }
     &-col-2 {
       .img {
-        height: 100%
+        height: 100%;
+        max-width: 250px;
+        border-radius: 20px;
       }
     }
   }
