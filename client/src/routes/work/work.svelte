@@ -1,1 +1,0 @@
-<div class="work">this is where the work section will go</div>

@@ -1,1 +1,0 @@
-<div class="about">this is where the about section will go</div>

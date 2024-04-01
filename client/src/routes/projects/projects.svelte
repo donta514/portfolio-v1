@@ -1,1 +1,0 @@
-<div class="projects">this is where the projects section will go</div>
