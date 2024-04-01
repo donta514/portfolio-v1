@@ -3,5 +3,36 @@ import Card from "./Card.astro";
 ---
 
 <Card>
-  <div>intro</div>
+  <div class="introCard">
+    <p class="text">
+      As a Web Developer, my expertise lies in crafting responsive and
+      distinctive visual experiences for digital products.
+      <br />
+      <br />
+      I have a true love for engaging design and genuine respect for the process
+      from concept to creation.
+      <br />
+      <br />
+      I always embrace learning new things as part of my journey. Thanks for stopping by, til next time!
+    </p>
+    <p class="name">👋 Dontá Smith</p>
+  </div>
 </Card>
+<style lang="scss">
+  .introCard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: var(--padding);
+    .text {
+      letter-spacing: -0.025em;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 1.3095rem + 0.9524vw, 1.9rem);
+    }
+    .name {
+      margin-top: 3rem;
+      font-size: clamp(1.5rem, 1.3095rem + 0.9524vw, 1.9rem);
+    }
+  }
+</style>

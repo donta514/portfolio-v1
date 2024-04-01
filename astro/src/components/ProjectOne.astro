@@ -1,11 +1,61 @@
 ---
 import Card from "./Card.astro";
+import { Image } from "astro:assets";
+import projectOne from "../assets/CJ-s-Nashville-Hot-Chicken.png";
 ---
 
 <Card>
-  <div class="projectOne">project one</div>
+  <div class="projectOne">
+    <a href="https://www.cjsnashvillehot.com/" class="projectOne-link">
+      <div class="top">
+        <Image class="img" src={projectOne} alt="my professional photo" />
+      </div>
+      <div class="bottom">
+        <p class="title">CJ's Nashville Hot Chicken</p>
+        <p class="text">
+          Ecommerce website for a freelance client looking to start a food
+          business. Built with webflow and hosted on Vercel.
+        </p>
+      </div>
+    </a>
+  </div>
 </Card>
 
 <style lang="scss">
-    
+  .projectOne {
+    padding: var(--padding);
+    overflow: hidden;
+    &-link {
+      color: inherit;
+      text-decoration: inherit;
+      .top {
+        display: block;
+        margin-right: -6rem;
+        .img {
+          overflow-clip-margin: content-box;
+          display: block;
+          vertical-align: middle;
+          height: 18rem;
+          max-width: 100%;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+      }
+      .bottom {
+        margin-top: 2rem;
+        .title {
+          margin-top: 1.5rem;
+          font-weight: 700;
+        }
+        .text {
+          margin-top: 1rem;
+          font-size: var(--font-size-lg);
+          font-weight: 300;
+        }
+      }
+    }
+    &:hover {
+      transform: translate(1.5);
+    }
+  }
 </style>

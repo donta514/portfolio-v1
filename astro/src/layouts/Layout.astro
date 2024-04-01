@@ -21,11 +21,15 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
-<style is:global lang="scss">
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&display=swap");
+
   :root {
     --accent: rgb(136, 58, 234);
     --accent-light: rgb(224, 204, 250);
     --accent-dark: rgb(49, 10, 101);
+    --primary-font: "Anton", sans-serif;
+    --secondary-font: "Inter", sans-serif;
     --accent-gradient: linear-gradient(
       to right,
       var(--accent-dark),
@@ -33,6 +37,9 @@ const { title } = Astro.props;
       var(--accent-light)
     );
     --border-radius: 32px;
+    --padding: max(3vh, 1rem) 1.5rem;
+    --font-size-lg: clamp(0.875rem, 0.7386rem + 0.6818vw, 1.25rem);
+    --font-size-xl: clamp(2rem, 1.0476rem + 4.7619vw, 4rem);
   }
 
   * {
@@ -41,13 +48,9 @@ const { title } = Astro.props;
     padding: 0;
   }
 
-  html,
   body {
-    font-family: system-ui, sans-serif;
+    font-family: var(--secondary-font);
     line-height: 1.5;
-
-    // font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
-    font-size: 1rem;
     background: #0d1117;
     background-image: url("src/assets/Pattern.svg");
     background-size: cover;
@@ -55,7 +58,7 @@ const { title } = Astro.props;
     background-position: center;
   }
 
-  .grid-col-span-2 {
-    grid-column: span 2;
+  .opacity {
+    opacity: 0.25;
   }
 </style>

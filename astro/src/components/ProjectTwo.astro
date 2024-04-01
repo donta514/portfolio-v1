@@ -1,7 +1,58 @@
 ---
 import Card from "./Card.astro";
+import { Image } from "astro:assets";
+import projectTwo from "../assets/Netflix-App.jpg";
 ---
 
 <Card>
-  <div>project two</div>
+  <div class="projectTwo">
+    <a href="https://netflix-app-henna-mu.vercel.app/" class="projectTwo-link">
+      <div class="top">
+        <Image class="img" src={projectTwo} alt="my professional photo" />
+      </div>
+      <div class="bottom">
+        <p class="title">Netflix Clone</p>
+        <p class="text">
+          A clone of Netflix with working trailers. Built using React,
+          Styled Components and TMDB movie API.
+        </p>
+      </div>
+    </a>
+  </div>
 </Card>
+
+<style lang="scss">
+  .projectTwo {
+    padding: var(--padding);
+    overflow: hidden;
+    &-link {
+      color: inherit;
+      text-decoration: inherit;
+      .top {
+        display: block;
+        margin-right: clamp(-21rem, -23.8256rem + 14.128vw, -17rem);
+        .img {
+          overflow-clip-margin: content-box;
+          display: block;
+          vertical-align: middle;
+          height: 18rem;
+          max-width: 100%;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+      }
+      .bottom {
+        margin-top: 2rem;
+        .title {
+          margin-top: 1.5rem;
+          font-weight: 700;
+        }
+        .text {
+          margin-top: 1rem;
+          font-size: var(--font-size-lg);
+          font-weight: 300;
+        }
+      }
+    }
+  }
+</style>

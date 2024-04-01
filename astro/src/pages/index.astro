@@ -2,23 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import AboutMe from "../components/AboutMe.astro";
-import ContactCard from "../components/ContactCard.astro";
 import IntroCard from "../components/IntroCard.astro";
 import MediaCard from "../components/MediaCard.astro";
 import ProjectOne from "../components/ProjectOne.astro";
 import ProjectTwo from "../components/ProjectTwo.astro";
 import ProjectThree from "../components/ProjectThree.astro";
+import GithubCard from "../components/githubCard.astro";
+import LinkedinCard from "../components/linkedinCard.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Donta Smith - Developer, Designer.">
+<Layout title="Dontá Smith - Developer, Designer.">
   <Nav />
   <main>
     <section class="wrapper">
       <div class="aboutMe">
         <AboutMe />
       </div>
-      <div class="introCard">
-        <IntroCard />
+      <div class="mediaCard">
+        <MediaCard />
       </div>
       <div class="projectOne">
         <ProjectOne />
@@ -29,14 +31,20 @@ import ProjectThree from "../components/ProjectThree.astro";
       <div class="projectThree">
         <ProjectThree />
       </div>
-      <div class="contactCard">
-        <ContactCard />
+      <div class="githubCard">
+        <GithubCard />
       </div>
-      <div class="mediaCard">
-        <MediaCard />
+      <div class="linkedinCard">
+        <LinkedinCard />
+      </div>
+      <div class="introCard">
+        <IntroCard />
       </div>
     </section>
   </main>
+  <!-- <footer>
+    <Footer />
+  </footer> -->
 </Layout>
 
 <style lang="scss">
@@ -58,29 +66,78 @@ import ProjectThree from "../components/ProjectThree.astro";
       margin-inline: auto;
       align-items: center;
       height: 100svh;
-      gap: 1.25rem;
-      .aboutMe {
-        @media screen and (min-width: $breakpointLg) {
-          // display: grid;
-          // grid-row: span 4 / span 4;
-          // grid-column: span 3 / span 3;
-          // grid-template-rows: repeat(8, minmax(0, 1fr));
-          // grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+
+      @media screen and (min-width: $breakpointSm) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        .aboutMe,
+        .mediaCard,
+        .projectOne,
+        .projectTwo,
+        .projectThree,
+        .introCard {
+          grid-column: span 2;
         }
       }
-      .introCard {
+
+      @media screen and (min-width: $breakpointMd) {
+        .projectOne,
+        .projectTwo {
+          grid-column: span 1;
+        }
+        .githubCard,
+        .linkedinCard {
+          height: 280px;
+        }
       }
-      .projectOne {
-        grid-row: span 2 / span 2;
-      }
-      .mediaCard {
-      }
-      .projectTwo {
-      }
-      .projectThree {
-      }
-      .contactCard {
+      @media screen and (min-width: $breakpointLg) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(3, (auto, auto));
+        .aboutMe {
+          display: flex;
+          grid-column: span 1;
+          grid-row: span 2 / span 2;
+          height: 100%;
+        }
+        .mediaCard {
+          display: flex;
+          height: 100%;
+          grid-row-start: 1;
+          grid-column-start: 3;
+        }
+        .githubCard {
+          grid-row-start: 3;
+          grid-column-start: 3;
+        }
+
+        .projectTwo {
+          display: flex;
+          height: 100%;
+        }
+        
+        .projectThree {
+          grid-row-start: 2;
+          grid-column-start: 2;
+        }
+        .linkedinCard {
+          grid-row-start: 4;
+          grid-column-start: 3;
+        }
+        .introCard {
+          grid-row: span 2;
+          grid-column: span 2;
+        }
       }
     }
+    .githubCard,
+    .linkedinCard {
+      display: grid;
+    }
   }
+  // footer {
+  //       position: fixed;
+  //   width: 100%;
+  //   bottom: 0;
+  //   padding: 1rem 0;
+  // }
 </style>

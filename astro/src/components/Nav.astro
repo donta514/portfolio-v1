@@ -1,36 +1,42 @@
 ---
-import myImage from "../assets/ds-logo-white.png";
-import githubImg from "../assets/github-mark-c791e9551fe4/github-mark/github-mark-white.png";
-import linkedinImg from "../assets/linkedin-logos/LinkedIn-Logos/In/Digital/White/1x/In-White-128.png";
-import instagramImg from "../assets/IG_brand_asset_pack_2023/01 Static Glyph/02 White Glyph/Instagram_Glyph_White.png";
+import myImage from "../assets/svg-logo.svg";
 import { Image } from "astro:assets";
-
-// interface Props {
-//   title: string;
-//   body: string;
-//   href: string;
-// }
-
-// const { href, title, body } = Astro.props;
 ---
 
 <script>
-  const navItems = document.querySelectorAll("nav-items");
-  const indicator = document.querySelector("nav-items-select");
+  function moveNavSelector() {
+    const navItemSelect = document.querySelector(".nav-items-select");
+    const navItems = document.querySelectorAll(".nav-items");
 
-  navItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      navItems.forEach((navItem) => {
-        navItem.classList.remove("active");
+    navItems.forEach((navItem) => {
+      navItem.addEventListener("click", function () {
+        const clickedItem = this.classList[1]; // Get the second class of the clicked div
+        switch (clickedItem) {
+          case "about":
+            navItemSelect.style.left = "59px";
+            navItemSelect.style.width = "72px";
+            break;
+          case "projects":
+            navItemSelect.style.left = "138px";
+            navItemSelect.style.width = "82px";
+            break;
+          case "contact":
+            navItemSelect.style.left = "223px";
+            navItemSelect.style.width = "83px";
+            break;
+          case "all":
+            navItemSelect.style.left = "5px";
+            navItemSelect.style.width = "54px";
+            break;
+          default:
+            break;
+        }
+        navItemSelect.style.transition = "left 0.3s, width 0.3s"; // Add transition CSS
       });
-      item.classList.add("active");
-
-      const rect = item.getBoundingClientRect();
-      const offsetLeft =
-        rect.left - indicator.parentElement.getBoundingClientRect().left;
-      const width = item
     });
-  });
+  }
+
+  moveNavSelector();
 </script>
 
 <nav>
@@ -39,8 +45,8 @@ import { Image } from "astro:assets";
       class="nav-img"
       src={myImage}
       alt="professional image"
-      width={75}
-      height={75}
+      width={120}
+      height={120}
       quality={"max"}
     />
   </div>
@@ -49,24 +55,27 @@ import { Image } from "astro:assets";
     <div class="nav-items all">All</div>
     <div class="nav-items about">About</div>
     <div class="nav-items projects">Projects</div>
-    <div class="nav-items contact">Contact</div>
-    <!-- <div class="nav-items-4">Resume</div> -->
+    <div class="nav-items contact">Media</div>
   </div>
-  <div class="nav-links">
-    <a href="https://github.com/donta514">
+  <div class="nav-contact">
+    <a href="mailto:donta.jamel.smith@gmail.com" class="link">
+      <p class="text">Contact</p>
+    </a>
+
+    <!-- <a href="https://github.com/donta514">
       <Image src={githubImg} alt="" width={24} height={24} quality={"high"} />
     </a>
     <a href="http://linkedin.com/in/dontasmith">
       <Image src={linkedinImg} alt="" width={24} height={24} quality={"high"} />
     </a>
-    <!-- <Image src={instagramImg} alt="" width={24} height={24} quality={"high"} /> -->
+    <Image src={instagramImg} alt="" width={24} height={24} quality={"high"} /> -->
   </div>
 </nav>
 <style lang="scss">
   nav {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
     place-items: center;
     height: 212px;
     @media screen and (min-width: 768px) {
@@ -98,7 +107,8 @@ import { Image } from "astro:assets";
         position: absolute;
         height: 32px;
         border-radius: 16px;
-        background: rgb(33, 38, 45);
+        // background: rgb(33, 38, 45);
+        background: var(--accent);
         z-index: -1;
       }
       .nav-items {
@@ -118,9 +128,24 @@ import { Image } from "astro:assets";
         }
       }
     }
-    .nav-links {
-      display: flex;
-      gap: 1.25em;
+    .nav-contact {
+      margin-top: 1.5rem;
+      .link {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        .text {
+          line-height: normal;
+        }
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+          transition: opacity 0.25s ease 0s;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        margin-top: 0;
+      }
     }
   }
 </style>

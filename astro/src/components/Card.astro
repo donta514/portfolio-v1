@@ -14,11 +14,11 @@
 <style lang="scss">
   .card {
     display: flex;
+    height: 100%;
     border: 1px solid rgb(48, 54, 61);
     box-shadow: rgb(48, 54, 61) 0px 0px 0px 1px inset;
     background: #13151a;
-    border-radius: 32px;
-    padding: max(3vh, 1rem) 1.5rem;
+    border-radius: var(--border-radius);
     &:hover {
       cursor: grab;
       transition: box-shadow 500ms ease;

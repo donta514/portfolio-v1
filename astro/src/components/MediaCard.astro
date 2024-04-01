@@ -3,5 +3,90 @@ import Card from "./Card.astro";
 ---
 
 <Card>
-  <div>media</div>
+  <div class="mediaCard">
+    <div class="mediaCard-top">
+      <p class="heading">Grab my Résumé!</p>
+      <p class="text">
+        Take a look at where I've been and the skills and tools I've worked with
+        along my professional journey.
+      </p>
+    </div>
+    <div class="mediaCard-bottom">
+      <a href="src/assets/Resume.pdf" download class="link">
+        <button type="button" class="button">
+          Download
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="svg"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path><path
+              d="M7 11l5 5l5 -5"></path><path d="M12 4l0 12"></path></svg
+          >
+        </button>
+      </a>
+    </div>
+  </div>
 </Card>
+<style lang="scss">
+  .mediaCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+    padding: var(--padding);
+    margin-inline: auto;
+    &-top {
+      .heading {
+        font-family: var(--primary-font);
+        font-size: var(--font-size-xl);
+        text-align: center;
+      }
+      .text {
+        font-size: var(--font-size-lg);
+        margin-top: 1rem;
+      }
+    }
+    &-bottom {
+      width: 100%;
+      margin-top: 2rem;
+      .link {
+        text-decoration: none;
+        .button {
+          cursor: pointer;
+          text-transform: capitalize;
+          display: flex;
+          width: 100%;
+          height: 3rem;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 0.5rem;
+          font-size: var(--font-size-lg);
+          font-weight: 600;
+          padding: 0.5rem 1rem;
+          background-color: var(--accent-light);
+          border: none;
+          &:hover {
+            background: var(--accent);
+            transition: all 0.2s ease-out 0s;
+            color: #fff;
+          }
+          .svg {
+            overflow: hidden;
+            overflow-clip-margin: content-box;
+            display: block;
+            vertical-align: middle;
+            height: 1rem;
+            width: 1rem;
+          }
+        }
+      }
+    }
+  }
+</style>

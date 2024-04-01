@@ -1,7 +1,57 @@
 ---
 import Card from "./Card.astro";
+import { Image } from "astro:assets";
+import projectThree from "../assets/spotify.png";
 ---
 
 <Card>
-  <div>project three</div>
+  <div class="ProjectThree">
+    <a href="" class="ProjectThree-link">
+      <div class="top">
+        <Image class="img" src={projectThree} alt="my professional photo" />
+      </div>
+      <div class="bottom">
+        <p class="title">Spotify App</p>
+        <p class="text">
+          Web app for visualizing user Spotify data. Built using the Spotify Web API, Node, Express, React, Styled Components and more.
+        </p>
+      </div>
+    </a>
+  </div>
 </Card>
+
+<style lang="scss">
+  .ProjectThree {
+    padding: var(--padding);
+    overflow: hidden;
+    &-link {
+      color: inherit;
+      text-decoration: inherit;
+      .top {
+        display: block;
+        margin-right: clamp(-17rem, -34.1429rem + 85.7143vw, -2rem);
+        .img {
+          overflow-clip-margin: content-box;
+          display: block;
+          vertical-align: middle;
+          height: 18rem;
+          max-width: 100%;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+      }
+      .bottom {
+        margin-top: 2rem;
+        .title {
+          margin-top: 1.5rem;
+          font-weight: 700;
+        }
+        .text {
+          margin-top: 1rem;
+          font-size: var(--font-size-lg);
+          font-weight: 300;
+        }
+      }
+    }
+  }
+</style>
