@@ -1,12 +1,12 @@
 ---
 import Card from "./Card.astro";
-import linkedinImg from "../assets/linkedin-logos/LinkedIn-Logos/In/Digital/White/2x/In-White-128@2x.png";
+import linkedinImg from "../assets/linkedin-logo/linkedIn-White-128.png";
 import { Image } from "astro:assets";
 ---
 
 <Card>
   <div class="linkedinCard">
-    <a href="http://linkedin.com/in/dontasmith">
+    <a href="http://linkedin.com/in/dontasmith" target="_blank">
       <Image
         src={linkedinImg}
         alt="linkedin logo"
@@ -29,7 +29,9 @@ import { Image } from "astro:assets";
     border-radius: var(--border-radius);
     padding: var(--padding);
     width: 100%;
-    .img {
-    }
+  }
+  :hover {
+    background: hsl(210 92% 44% / 1);
+    transition: 0.5s ease 0s;
   }
 </style>

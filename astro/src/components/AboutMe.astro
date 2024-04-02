@@ -49,6 +49,12 @@ import myPhoto from "../assets/professional-image.jpg";
         max-width: 90px;
         height: auto;
         clip-path: circle();
+        :hover {
+          width: 150px;
+          height: auto;
+          transition: transform 0.3s;
+          transform: scale(1.2);
+        }
       }
       .text {
         line-height: 1.5rem;
@@ -72,32 +78,5 @@ import myPhoto from "../assets/professional-image.jpg";
       font-size: var(--font-size-lg);
       margin-top: 1rem;
     }
-    // @media screen and (min-width: 768px) {
-    //   display: flex;
-    //   width: 100%;
-    // }
-    // &-col-1 {
-    //   display: grid;
-    //   align-items: center;
-    //   margin-right: auto;
-    //   gap: 0.5rem;
-    //   padding: var(--padding);
-    //   p {
-    //   }
-    //   h1 {
-    //     color: var(--accent-light);
-    //     font-size: clamp(2.5rem, 2.0455rem + 2.2727vw, 3.75rem);
-    //     font-family: var(--primary-font);
-    //   }
-    // }
-    // &-col-2 {
-    //   .img {
-    //     height: 100%;
-    //     max-width: 350px;
-    //     border-radius: 32px;
-    //     clip-path: circle(50%);
-
-    //   }
-    // }
   }
 </style>

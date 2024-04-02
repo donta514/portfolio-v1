@@ -78,7 +78,7 @@ import Card from "./Card.astro";
           border: none;
           &:hover {
             background: var(--accent);
-            transition: all 0.2s ease-out 0s;
+            transition: all 0.5s ease 0s;
             color: #fff;
           }
           .svg {
@@ -94,6 +94,9 @@ import Card from "./Card.astro";
       }
       @media screen and (min-width: 768px) {
         grid-template-columns: auto auto;
+      }
+      @media screen and (min-width: 992px) {
+        grid-template-columns: 180px auto;
       }
     }
   }

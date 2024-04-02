@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 Dontá Smith - Developer, Designer.">
+  <div class="page404">
+    <!-- <div class="page404_title">
+      <h1 class="h1">404</h1>
+    </div> -->
+    <div class="contentBox">
+      <h3>Looks like you're lost!</h3>
+
+      <p>the page you are looking for is not avaible.</p>
+
+      <a href="/" class="link">Go Home</a>
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .link:hover {
+    background-color: var(--accent);
+    transition: all 0.5s ease 0s;
+  }
+
+  .page404 {
+    display: grid;
+    place-items: center;
+    height: 100svh;
+    &_title {
+      text-align: center;
+      .h1 {
+        font-family: var(--primary-font);
+        color: #fff;
+        font-size: var(--font-size-xl);
+      }
+    }
+    .contentBox {
+      display: grid;
+      gap: 1rem;
+      h3 {
+        color: #fff;
+        font-size: var(--font-size-xl);
+        font-family: var(--primary-font);
+        text-align: center;
+        text-transform: uppercase;
+      }
+      p {
+        color: #fff;
+        font-size: var(--font-size-lg);
+        font-family: var(--secondary-font);
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .link {
+        text-decoration: none;
+        color: #fff;
+        font-size: var(--font-size-lg);
+        font-family: var(--secondary-font);
+        text-align: center;
+        border-radius: var(--border-radius);
+        text-transform: capitalize;
+      }
+    }
+  }
+</style>
+<!-- <div class="four_zero_four_bg">
+  <h1 class="text-center">404</h1>
+</div>
+
+<div class="contant_box_404">
+  <h3 class="h2">Look like you're lost</h3>
+
+  <p>the page you are looking for not avaible!</p>
+
+  <a href="" class="link_404">Go to Home</a>
+</div> -->

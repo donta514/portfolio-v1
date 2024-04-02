@@ -1,12 +1,12 @@
 ---
 import Card from "./Card.astro";
-import githubImg from "../assets/github-mark-c791e9551fe4/github-mark/github-mark-white.svg";
+import githubImg from "../assets/github-logo/github-mark/github-mark-white.svg";
 import { Image } from "astro:assets";
 ---
 
 <Card>
   <div class="githubCard">
-    <a href="https://github.com/donta514">
+    <a href="https://github.com/donta514" target="_blank">
       <Image
         class="img"
         src={githubImg}
@@ -30,8 +30,9 @@ import { Image } from "astro:assets";
     border-radius: var(--border-radius);
     padding: var(--padding);
     width: 100%;
-    :hover {
-        transition: bottom 0.3s;
-    }
+  }
+  :hover {
+    background: hsl(266 54% 54% / 1);
+    transition: 0.5s ease 0s;
   }
 </style>

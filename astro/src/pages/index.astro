@@ -55,6 +55,11 @@ import Footer from "../components/Footer.astro";
   $breakpointXl: 1200px;
   $breakpointXxl: 1840px;
 
+  .wrapper > div {
+    display: grid;
+    height: 100%;
+  }
+
   main {
     position: relative;
     color: white;
@@ -85,23 +90,15 @@ import Footer from "../components/Footer.astro";
         .projectTwo {
           grid-column: span 1;
         }
-        .githubCard,
-        .linkedinCard {
-          height: 280px;
-        }
       }
       @media screen and (min-width: $breakpointLg) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: repeat(3, (auto, auto));
         .aboutMe {
-          display: flex;
           grid-column: span 1;
           grid-row: span 2 / span 2;
-          height: 100%;
         }
         .mediaCard {
-          display: flex;
-          height: 100%;
           grid-row-start: 1;
           grid-column-start: 3;
         }
@@ -110,11 +107,6 @@ import Footer from "../components/Footer.astro";
           grid-column-start: 3;
         }
 
-        .projectTwo {
-          display: flex;
-          height: 100%;
-        }
-        
         .projectThree {
           grid-row-start: 2;
           grid-column-start: 2;
@@ -128,10 +120,6 @@ import Footer from "../components/Footer.astro";
           grid-column: span 2;
         }
       }
-    }
-    .githubCard,
-    .linkedinCard {
-      display: grid;
     }
   }
   // footer {

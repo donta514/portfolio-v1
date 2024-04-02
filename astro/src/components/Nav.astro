@@ -1,5 +1,5 @@
 ---
-import myImage from "../assets/svg-logo.svg";
+import myLogo from "../assets//portfolio-logo/svg-logo.svg";
 import { Image } from "astro:assets";
 ---
 
@@ -31,7 +31,7 @@ import { Image } from "astro:assets";
           default:
             break;
         }
-        navItemSelect.style.transition = "left 0.3s, width 0.3s"; // Add transition CSS
+        navItemSelect.style.transition = "left 0.3s, width 0.3s";
       });
     });
   }
@@ -43,7 +43,7 @@ import { Image } from "astro:assets";
   <div class="nav-logo">
     <Image
       class="nav-img"
-      src={myImage}
+      src={myLogo}
       alt="professional image"
       width={120}
       height={120}
@@ -61,14 +61,6 @@ import { Image } from "astro:assets";
     <a href="mailto:donta.jamel.smith@gmail.com" class="link">
       <p class="text">Contact</p>
     </a>
-
-    <!-- <a href="https://github.com/donta514">
-      <Image src={githubImg} alt="" width={24} height={24} quality={"high"} />
-    </a>
-    <a href="http://linkedin.com/in/dontasmith">
-      <Image src={linkedinImg} alt="" width={24} height={24} quality={"high"} />
-    </a>
-    <Image src={instagramImg} alt="" width={24} height={24} quality={"high"} /> -->
   </div>
 </nav>
 <style lang="scss">
