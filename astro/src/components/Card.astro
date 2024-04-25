@@ -20,8 +20,11 @@
     background: #13151a;
     border-radius: var(--border-radius);
     &:hover {
-      transition: box-shadow 500ms ease;
+      transition:
+        transform 0.3s,
+        box-shadow 500ms ease;
       box-shadow: rgba(100, 100, 111, 0.1) 0px 5px 24px 0px;
+      transform: scale(1.02);
     }
   }
 </style>
