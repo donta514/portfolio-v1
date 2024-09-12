@@ -5,33 +5,28 @@ import { Image } from "astro:assets";
 
 <script>
   function moveNavSelector() {
-    const navItemSelect = document.querySelector(".nav-items-select");
+    const navItemSelect = document.querySelector(
+      ".nav-items-select"
+    ) as HTMLElement;
     const navItems = document.querySelectorAll(".nav-items");
+
+    const positions = {
+      all: { left: 5, width: 54 },
+      about: { left: 59, width: 72 },
+      projects: { left: 138, width: 82 },
+      contact: { left: 223, width: 83 },
+    };
 
     navItems.forEach((navItem) => {
       navItem.addEventListener("click", function () {
-        const clickedItem = this.classList[1]; // Get the second class of the clicked div
-        switch (clickedItem) {
-          case "about":
-            navItemSelect.style.left = "59px";
-            navItemSelect.style.width = "72px";
-            break;
-          case "projects":
-            navItemSelect.style.left = "138px";
-            navItemSelect.style.width = "82px";
-            break;
-          case "contact":
-            navItemSelect.style.left = "223px";
-            navItemSelect.style.width = "83px";
-            break;
-          case "all":
-            navItemSelect.style.left = "5px";
-            navItemSelect.style.width = "54px";
-            break;
-          default:
-            break;
+        const clickedItem = this.classList[1] as keyof typeof positions;
+        const { left, width } = positions[clickedItem] || {};
+
+        if (left !== undefined && width !== undefined) {
+          navItemSelect.style.left = `${left}px`;
+          navItemSelect.style.width = `${width}px`;
+          navItemSelect.style.transition = "left 0.3s, width 0.3s";
         }
-        navItemSelect.style.transition = "left 0.3s, width 0.3s";
       });
     });
   }
