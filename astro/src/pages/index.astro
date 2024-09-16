@@ -1,4 +1,8 @@
 ---
+import "../styles/layout-all.scss";
+import "../styles/layout-about.scss";
+import "../styles/layout-projects.scss";
+import "../styles/layout-media.scss";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import AboutMe from "../components/AboutMe.astro";
@@ -9,36 +13,38 @@ import ProjectTwo from "../components/ProjectTwo.astro";
 import ProjectThree from "../components/ProjectThree.astro";
 import GithubCard from "../components/githubCard.astro";
 import LinkedinCard from "../components/linkedinCard.astro";
-import Footer from "../components/Footer.astro";
+// import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Dontá Smith - Developer, Designer.">
   <Nav />
   <main>
     <section class="wrapper">
-      <div class="aboutMe">
-        <AboutMe />
-      </div>
-      <div class="mediaCard">
-        <MediaCard />
-      </div>
-      <div class="projectOne">
-        <ProjectOne />
-      </div>
-      <div class="projectTwo">
-        <ProjectTwo />
-      </div>
-      <div class="projectThree">
-        <ProjectThree />
-      </div>
-      <div class="githubCard">
-        <GithubCard />
-      </div>
-      <div class="linkedinCard">
-        <LinkedinCard />
-      </div>
-      <div class="introCard">
-        <IntroCard />
+      <div class="layout-all">
+        <div class="aboutMe">
+          <AboutMe />
+        </div>
+        <div class="mediaCard">
+          <MediaCard />
+        </div>
+        <div class="projectOne">
+          <ProjectOne />
+        </div>
+        <div class="projectTwo">
+          <ProjectTwo />
+        </div>
+        <div class="projectThree">
+          <ProjectThree />
+        </div>
+        <div class="githubCard">
+          <GithubCard />
+        </div>
+        <div class="linkedinCard">
+          <LinkedinCard />
+        </div>
+        <div class="introCard">
+          <IntroCard />
+        </div>
       </div>
     </section>
   </main>
@@ -46,78 +52,19 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <style lang="scss">
-  $breakpointXs: 320px;
-  $breakpointSm: 576px;
-  $breakpointMd: 768px;
-  $breakpointLg: 992px;
-  $breakpointXl: 1200px;
-  $breakpointXxl: 1840px;
-
-  .wrapper > div {
-    display: grid;
-    height: 100%;
-  }
-
   main {
-    position: relative;
-    color: white;
-    top: 2rem;
+    color: var(--text-white);
+    margin-top: 2rem;
     .wrapper {
-      display: grid;
+      div {
+        display: grid;
+        height: 100%;
+      }
       width: $breakpointXl;
       max-width: calc(100% - 2rem);
       margin-inline: auto;
       align-items: center;
       height: 100svh;
-      gap: 1.5rem;
-
-      @media screen and (min-width: $breakpointSm) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        .aboutMe,
-        .mediaCard,
-        .projectOne,
-        .projectTwo,
-        .projectThree,
-        .introCard {
-          grid-column: span 2;
-        }
-      }
-
-      @media screen and (min-width: $breakpointMd) {
-        .projectOne,
-        .projectTwo {
-          grid-column: span 1;
-        }
-      }
-      @media screen and (min-width: $breakpointLg) {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-rows: repeat(3, (auto, auto));
-        .aboutMe {
-          grid-column: span 1;
-          grid-row: span 2 / span 2;
-        }
-        .mediaCard {
-          grid-row-start: 1;
-          grid-column-start: 3;
-        }
-        .githubCard {
-          grid-row-start: 3;
-          grid-column-start: 3;
-        }
-
-        .projectThree {
-          grid-row-start: 2;
-          grid-column-start: 2;
-        }
-        .linkedinCard {
-          grid-row-start: 4;
-          grid-column-start: 3;
-        }
-        .introCard {
-          grid-row: span 2;
-          grid-column: span 2;
-        }
-      }
     }
   }
 </style>

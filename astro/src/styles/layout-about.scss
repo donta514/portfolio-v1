@@ -1,0 +1,132 @@
+.layout-about {
+    gap: $gap;
+
+    .aboutMe,
+    .introCard,
+    .mediaCard {
+        transform: scale(1);
+    }
+
+    .linkedinCard,
+    .githubCard,
+    .projectOne,
+    .projectTwo,
+    .projectThree {
+        opacity: $opacity;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        /* Adding transform for smoother interaction */
+    }
+
+    @media screen and (min-width: $breakpointSm) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        .aboutMe,
+        .mediaCard,
+        .projectOne,
+        .projectTwo,
+        .projectThree,
+        .introCard {
+            grid-column: span 2;
+        }
+    }
+
+    @media screen and (min-width: $breakpointMd) {
+
+        .projectOne,
+        .projectTwo {
+            grid-column: span 1;
+        }
+    }
+
+    @media screen and (min-width: $breakpointLg) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(3, (auto, auto));
+
+        .aboutMe {
+            grid-column: span 1;
+            grid-row: span 2 / span 2;
+        }
+
+        .mediaCard {
+            grid-row-start: 1;
+            grid-column-start: 3;
+        }
+
+        .githubCard {
+            grid-row-start: 3;
+            grid-column-start: 3;
+        }
+
+        .projectThree {
+            grid-row-start: 2;
+            grid-column-start: 2;
+        }
+
+        .linkedinCard {
+            grid-row-start: 4;
+            grid-column-start: 3;
+        }
+
+        .introCard {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+    }
+}
+
+
+// Saved Styles - to apply: insert under .layout-about
+
+// .introCard {
+//     grid-row-start: 3;
+// }
+
+// @media screen and (min-width: $breakpointSm) {
+
+//     .aboutMe,
+//     .mediaCard,
+//     .projectOne,
+//     .projectTwo,
+//     .projectThree,
+//     .introCard {
+//         grid-column: span 2;
+//     }
+
+//     .githubCard,
+//     .linkedinCard {
+//         grid-row-start: 7;
+//     }
+
+// }
+
+// @media screen and (min-width: $breakpointMd) {
+
+//     .aboutMe,
+//     .mediaCard,
+//     .introCard,
+//     .projectThree {
+//         grid-column: span 2;
+//     }
+
+
+//     .projectOne,
+//     .projectTwo {
+//         grid-row-start: 4;
+//         grid-column: span 1;
+//     }
+
+//     .githubCard,
+//     .linkedinCard {
+//         grid-row-start: 6;
+//     }
+// }
+
+// @media screen and (min-width: $breakpointLg) {
+//     grid-template-columns: repeat(2, minmax(0, 1fr));
+
+//     .aboutMe,
+//     .introCard {
+//         grid-row-start: 1;
+//         grid-column: span 1;
+//     }
+// }
