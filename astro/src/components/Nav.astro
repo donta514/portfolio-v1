@@ -1,6 +1,7 @@
 ---
 import myLogo from "../assets//portfolio-logo/svg-logo.svg";
 import { Image } from "astro:assets";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <script>
@@ -99,7 +100,7 @@ import { Image } from "astro:assets";
     }
     .nav-item {
       background: transparent;
-      border: 2px solid rgb(48, 54, 61);
+      border: 2px solid var(--border-color);
       border-radius: 23px;
       transform: translateX(0px);
       display: flex;
@@ -112,7 +113,7 @@ import { Image } from "astro:assets";
         height: 32px;
         border-radius: 16px;
         // background: rgb(33, 38, 45);
-        background: var(--accent);
+        background: var(--button-bg);
         z-index: -1;
       }
       .nav-items {
@@ -123,7 +124,7 @@ import { Image } from "astro:assets";
         height: 32px;
         padding: 0px 16px;
         transition: opacity 0.3s ease 0s;
-        color: rgb(240, 242, 248);
+        color: var(--text-color);
         cursor: pointer;
         &:hover {
           cursor: pointer;
@@ -135,7 +136,7 @@ import { Image } from "astro:assets";
     .nav-contact {
       margin-top: 1.5rem;
       .link {
-        color: var(--text-white);
+        color: var(--text-color);
         text-decoration: none;
         cursor: pointer;
         .text {

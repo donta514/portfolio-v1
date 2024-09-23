@@ -1,0 +1,35 @@
+<script is:inline>
+  function getThemePreference() {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }
+
+  setTheme(getThemePreference());
+</script>
+
+<script>
+  function handleToggleClick() {
+    const element = document.documentElement;
+    element.setAttribute(
+      "data-theme",
+      element.getAttribute("data-theme") === "light" ? "dark" : "light"
+    );
+
+    localStorage.setItem("theme", element.getAttribute("data-theme")!);
+  }
+
+  document
+    .getElementById("themeToggle")
+    ?.addEventListener("click", handleToggleClick);
+</script>
+
+<slot />
