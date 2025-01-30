@@ -1,0 +1,22 @@
+<script is:inline>
+  const getThemePreference = () => {
+    return (
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
+    );
+  };
+
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
+    // document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  };
+
+  // Ensure the theme is set before rendering
+  const theme = getThemePreference();
+  applyTheme(theme);
+</script>
+
+<slot />
