@@ -5,7 +5,6 @@ interface Props {
 
 const { title } = Astro.props;
 import ThemeProvider from "../components/ThemeProvider.astro";
-import { lightTheme, darkTheme } from "../styles/theme";
 ---
 
 <!doctype html>
@@ -62,16 +61,10 @@ import { lightTheme, darkTheme } from "../styles/theme";
     </ThemeProvider>
   </body>
 </html>
-<style is:global define:vars={darkTheme}>
+<style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&display=swap");
 
   :root {
-    --html-bg: var(--htmlBackground);
-    --text-color: var(--textFont);
-    --button-bg: var(--buttonBackground);
-    --button-hover-bg: var(--buttonHoverBackground);
-    --card-bg: var(--cardBackground);
-    --border-color: var(--borderColor);
 
     --primary-font: "Anton", sans-serif;
     --secondary-font: "Inter", sans-serif;
@@ -81,21 +74,22 @@ import { lightTheme, darkTheme } from "../styles/theme";
     --font-size-xl: clamp(2rem, 1.0476rem + 4.7619vw, 4rem);
   }
 
-  .dark {
-    --html-bg: #{darkTheme.htmlBackground};
-    --text-color: #{darkTheme.textFont};
-    --button-bg: #{darkTheme.buttonBackground};
-    --button-hover-bg: #{darkTheme.buttonHoverBackground};
-    --card-bg: #{darkTheme.cardBackground};
-    --border-color: #{darkTheme.borderColor};
+  [data-theme="light"] {
+    --button-bg: rgb(221, 200, 255);
+    --text-color: #000000;
+    --html-bg: #ffffff;
+    --card-bg: #fafafa;
+    --border-color: rgb(48, 54, 61);
+    --button-hover-bg: rgb(193, 165, 247);
   }
+
   [data-theme="dark"] {
-    --html-bg: #{darkTheme.htmlBackground};
-    --text-color: #{darkTheme.textFont};
-    --button-bg: #{darkTheme.buttonBackground};
-    --button-hover-bg: #{darkTheme.buttonHoverBackground};
-    --card-bg: #{darkTheme.cardBackground};
-    --border-color: #{darkTheme.borderColor};
+    --html-bg: #000000;
+    --text-color: #ffffff;
+    --button-bg: rgb(136, 58, 234);
+    --button-hover-bg: rgb(49, 10, 101);
+    --card-bg: #0d1117;
+    --border-color: rgb(48, 54, 61);
   }
 
   * {

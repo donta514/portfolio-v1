@@ -1,14 +1,13 @@
----
-// Contact.astro
----
-
-<!-- Look into this file when implementing the dark and light mode toggles -->
+<!-- Go Back Button -->
+<div class="go-back">
+  <a href="javascript:history.back()" aria-label="Go Back">← Go Back</a>
+</div>
 
 <div class="contact-form">
   <h1>Contact Me</h1>
-  <form action="https://formsubmit.co/e6f9dedb097d4187b05a86b1bcf9d647" method="POST">
+  <form action="https://formsubmit.co/e6f9dedb097d4187b05a86b1bcf9d647" method="POST" onsubmit="return validateForm()">
     <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_captcha" value="false">
+    <!-- <input type="hidden" name="_captcha" value="false"> -->
     <input type="hidden" name="_next" value="https://www.dontasmith.com/thanks">
 
     <div class="form-group">
@@ -30,6 +29,24 @@
 </div>
 
 <style>
+  /* Go Back Button Style */
+  .go-back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .go-back a {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .go-back a:hover {
+    text-decoration: underline;
+  }
+
   .contact-form {
     max-width: 30rem;
     padding: 1.5rem;
@@ -37,6 +54,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
+  
   @media screen and (max-width: 475px) {
     .contact-form {
       margin: 2.5rem 1rem 0 1rem;
@@ -123,3 +141,7 @@
     ring-indigo-500;
   }
 </style>
+
+<script>
+
+</script>
