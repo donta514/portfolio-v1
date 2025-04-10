@@ -1,31 +1,36 @@
 ---
 import Card from "./Card.astro";
 import { Image } from "astro:assets";
-import projectOne from "../assets//project-images/CJ-Ecommerce.png";
+import projectOne from "../assets/project-images/Github-User-Search.png";
 ---
 
 <Card>
   <div class="projectOne">
-    <a href="https://www.cjsnashvillehot.com/" target="_blank" class="projectOne-link">
+    <a
+      href="https://github-user-search-phi-eosin.vercel.app/"
+      target="_blank"
+      class="projectOne-link"
+    >
       <div class="top">
-        <Image class="img" src={projectOne} alt="my professional photo" />
+        <Image class="img" src={projectOne} alt="my project photo" />
       </div>
       <div class="bottom">
-        <p class="title">CJ's Nashville Hot Chicken</p>
+        <p class="title">Github User Search App</p>
         <p class="text">
-          Ecommerce website for a freelance client looking to start a food
-          business. Built with webflow and hosted on Vercel.
+          A responsive web app that lets users search GitHub profiles by
+          username. It fetches and displays key user data like name, avatar,
+          bio, and repo stats using the GitHub Users API.
         </p>
       </div>
     </a>
   </div>
 </Card>
 
-<style lang="scss">
+<style>
   .projectOne {
     padding: var(--padding);
     overflow: hidden;
-    &-link {
+    .projectOne-link {
       color: var(--text-color);
       text-decoration: inherit;
       .top {
@@ -46,6 +51,7 @@ import projectOne from "../assets//project-images/CJ-Ecommerce.png";
         .title {
           margin-top: 1.5rem;
           font-weight: 700;
+          font-size: var(--font-size-lg);
         }
         .text {
           margin-top: 1rem;
@@ -53,9 +59,6 @@ import projectOne from "../assets//project-images/CJ-Ecommerce.png";
           font-weight: 300;
         }
       }
-    }
-    &:hover {
-      transform: translate(1.5);
     }
   }
 </style>

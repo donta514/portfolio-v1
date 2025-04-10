@@ -1,14 +1,16 @@
-<!-- Go Back Button -->
+---
+import { contactForm } from '../actions/forms/contact';
+const { Form, formAction } = contactForm;
+---
+
 <div class="go-back">
   <a href="javascript:history.back()" aria-label="Go Back">← Go Back</a>
 </div>
 
 <div class="contact-form">
   <h1>Contact Me</h1>
-  <form action="https://formsubmit.co/e6f9dedb097d4187b05a86b1bcf9d647" method="POST" onsubmit="return validateForm()">
-    <input type="text" name="_honey" style="display:none">
-    <!-- <input type="hidden" name="_captcha" value="false"> -->
-    <input type="hidden" name="_next" value="https://www.dontasmith.com/thanks">
+  <Form action={formAction} method="POST">
+    <input type="text" name="bot-field" style="display:none" autocomplete="off" />
 
     <div class="form-group">
       <label for="name">Your Name</label>
@@ -25,7 +27,10 @@
     <div class="form-group">
       <button type="submit">Send Message</button>
     </div>
-  </form>
+  </Form>
+
+  {formAction.state.success && <p style="color: green;">Message sent!</p>}
+  {formAction.state.error && <p style="color: red;">{formAction.state.error}</p>}
 </div>
 
 <style>

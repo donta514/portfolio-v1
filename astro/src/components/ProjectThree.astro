@@ -1,31 +1,33 @@
 ---
 import Card from "./Card.astro";
 import { Image } from "astro:assets";
-import projectThree from "../assets/project-images/spotify.png";
+import projectThree from "../assets/project-images/Mushroom-Guide.png";
 ---
 
 <Card>
   <div class="ProjectThree">
-    <a href="https://spotify.dontasmith.com/" class="ProjectThree-link">
+    <a href="https://mushroomguide.vercel.app/" class="ProjectThree-link">
       <div class="top">
         <Image class="img" src={projectThree} alt="my professional photo" />
       </div>
       <div class="bottom">
-        <p class="title">Spotify App</p>
+        <p class="title">Mushroom Guide</p>
         <p class="text">
-          Web app for visualizing user Spotify data. Built using the Spotify Web
-          API, Node, Express, React, Styled Components and more.
+          A polished frontend app built to explore modern CSS features,
+          including custom properties, nesting, CSS Grid, and utility classes.
+          It showcases advanced bento-style layouts, view transitions,
+          animations, and interactive filtering for an engaging, responsive UI.
         </p>
       </div>
     </a>
   </div>
 </Card>
 
-<style lang="scss">
+<style>
   .ProjectThree {
     padding: var(--padding);
     overflow: hidden;
-    &-link {
+    .ProjectThree-link {
       color: var(--text-color);
       text-decoration: inherit;
       .top {
@@ -46,6 +48,7 @@ import projectThree from "../assets/project-images/spotify.png";
         .title {
           margin-top: 1.5rem;
           font-weight: 700;
+          font-size: var(--font-size-lg);
         }
         .text {
           margin-top: 1rem;

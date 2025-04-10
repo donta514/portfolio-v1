@@ -1,5 +1,6 @@
 .layout-about {
-    gap: $gap;
+    display: grid;
+    gap: 1.25rem;
 
     .aboutMe,
     .introCard,
@@ -12,12 +13,12 @@
     .projectOne,
     .projectTwo,
     .projectThree {
-        opacity: $opacity;
+        opacity: 0.25;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         /* Adding transform for smoother interaction */
     }
 
-    @media screen and (min-width: $breakpointSm) {
+    @media screen and (min-width: 576px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
         .aboutMe,
@@ -30,7 +31,7 @@
         }
     }
 
-    @media screen and (min-width: $breakpointMd) {
+    @media screen and (min-width: 768px) {
 
         .projectOne,
         .projectTwo {
@@ -38,7 +39,7 @@
         }
     }
 
-    @media screen and (min-width: $breakpointLg) {
+    @media screen and (min-width: 992px) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: repeat(3, (auto, auto));
 
@@ -73,60 +74,3 @@
         }
     }
 }
-
-
-// Saved Styles - to apply: insert under .layout-about
-
-// .introCard {
-//     grid-row-start: 3;
-// }
-
-// @media screen and (min-width: $breakpointSm) {
-
-//     .aboutMe,
-//     .mediaCard,
-//     .projectOne,
-//     .projectTwo,
-//     .projectThree,
-//     .introCard {
-//         grid-column: span 2;
-//     }
-
-//     .githubCard,
-//     .linkedinCard {
-//         grid-row-start: 7;
-//     }
-
-// }
-
-// @media screen and (min-width: $breakpointMd) {
-
-//     .aboutMe,
-//     .mediaCard,
-//     .introCard,
-//     .projectThree {
-//         grid-column: span 2;
-//     }
-
-
-//     .projectOne,
-//     .projectTwo {
-//         grid-row-start: 4;
-//         grid-column: span 1;
-//     }
-
-//     .githubCard,
-//     .linkedinCard {
-//         grid-row-start: 6;
-//     }
-// }
-
-// @media screen and (min-width: $breakpointLg) {
-//     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-//     .aboutMe,
-//     .introCard {
-//         grid-row-start: 1;
-//         grid-column: span 1;
-//     }
-// }

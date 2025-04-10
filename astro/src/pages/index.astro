@@ -1,9 +1,9 @@
 ---
-import "../styles/layout-all.scss";
-import "../styles/layout-about.scss";
-import "../styles/layout-projects.scss";
-import "../styles/layout-media.scss";
-import ThemeIcon from "../components/ThemeIcon.astro";
+import "../styles/layout-all.css";
+import "../styles/layout-about.css";
+import "../styles/layout-projects.css";
+import "../styles/layout-media.css";
+// import ThemeIcon from "../components/ThemeIcon.astro";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import AboutMe from "../components/AboutMe.astro";
@@ -42,26 +42,22 @@ import LinkedinCard from "../components/linkedinCard.astro";
         <div class="linkedinCard">
           <LinkedinCard />
         </div>
-        <div class="themeIconCard">
-          <ThemeIcon />
-        </div>
         <div class="introCard">
           <IntroCard />
         </div>
+        <!-- <div class="themeIconCard">
+          <ThemeIcon />
+        </div> -->
       </div>
     </section>
   </main>
 </Layout>
 
-<style lang="scss">
+<style>
   main {
     margin-top: 2rem;
     .wrapper {
-      div {
-        display: grid;
-        height: 100%;
-      }
-      width: $breakpointXl;
+      width: 1200px;
       max-width: calc(100% - 2rem);
       margin-inline: auto;
       align-items: center;

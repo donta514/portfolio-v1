@@ -6,11 +6,11 @@ import Card from "./Card.astro";
   <div class="mediaCard">
     <div class="mediaCard-top">
       <p class="heading">Grab my Résumé!</p>
-      <p class="text">
-        Take a look at where I've been and the skills and tools I've worked with
-        along my professional journey.
-      </p>
     </div>
+    <p class="text">
+      Take a look at my professional journey—where I’ve been, the roles
+      I’ve taken on, and the skills and tools I’ve developed along the way.
+    </p>
     <div class="mediaCard-bottom">
       <a href="/resume.pdf" target="_blank" class="link">
         <button type="button" class="button"> View here </button>
@@ -36,7 +36,7 @@ import Card from "./Card.astro";
     </div>
   </div>
 </Card>
-<style lang="scss">
+<style>
   .mediaCard {
     display: flex;
     flex-direction: column;
@@ -45,18 +45,18 @@ import Card from "./Card.astro";
     align-items: center;
     padding: var(--padding);
     margin-inline: auto;
-    &-top {
+    .mediaCard-top {
       .heading {
         font-family: var(--primary-font);
         font-size: var(--font-size-xl);
         text-align: center;
       }
-      .text {
-        font-size: var(--font-size-lg);
-        margin-top: 1rem;
-      }
     }
-    &-bottom {
+    .text {
+      font-size: var(--font-size-lg);
+      margin-top: 1rem;
+    }
+    .mediaCard-bottom {
       width: 100%;
       margin-top: 2rem;
       display: grid;
@@ -77,10 +77,6 @@ import Card from "./Card.astro";
           background-color: var(--button-bg);
           border: none;
           color: var(--text-color);
-          &:hover {
-            background-color: var(--button-hover-bg);
-            transition: all 0.5s ease 0s;
-          }
           .svg {
             overflow: hidden;
             overflow-clip-margin: content-box;
@@ -90,6 +86,10 @@ import Card from "./Card.astro";
             height: 1rem;
             width: 1rem;
           }
+        }
+        .button:hover {
+          background-color: var(--button-hover-bg);
+          transition: all 0.5s ease 0s;
         }
       }
       @media screen and (min-width: 768px) {

@@ -23,24 +23,27 @@ import myPhoto from "../assets/professional-image.jpg";
         <p class="title">Web Developer</p>
       </div>
     </div>
-    <p class="aboutMe-middle">Hey, welcome to my website!</p>
+    <p class="aboutMe-middle">Hey there — welcome to my corner of the web!</p>
     <p class="aboutMe-bottom">
-      I'm a digital designer, developer, and music enthusiast based in Washington,
-      D.C. I love to make ideas come to life through various tools,
-      technologies and frameworks.
+      I’m a digital developer, designer, and music enthusiast based in
+      Washington, D.C., passionate about bringing ideas to life through
+      thoughtful design and modern technologies. Whether I’m crafting user
+      experiences or building out full-stack solutions, I thrive at the
+      intersection of creativity and code.
       <br />
       <br />
-      I am interested in Product Design, JamStack, DevOps, Sports and Music. Beyond
-      the screens, I find solace and joy playing football, basketball and creating
-      memorable experiences with friends and family.
+      I’m especially drawn to Product Design, the Jamstack ecosystem, and all things
+      DevOps. When I’m not immersed in pixels and projects, you’ll likely find me
+      on the court playing football or basketball, or making lasting memories with
+      friends and family — always chasing that perfect balance between work and play.
     </p>
   </div>
 </Card>
 
-<style lang="scss">
+<style>
   .aboutMe {
     padding: var(--padding);
-    &-top {
+    .aboutMe-top {
       position: relative;
       display: flex;
       column-gap: 1rem;
@@ -49,12 +52,12 @@ import myPhoto from "../assets/professional-image.jpg";
         max-width: 90px;
         height: auto;
         clip-path: circle();
-        :hover {
+        /* :hover {
           width: 150px;
           height: auto;
           transition: transform 0.3s;
           transform: scale(1.2);
-        }
+        } */
       }
       .text {
         line-height: 1.5rem;
@@ -67,14 +70,14 @@ import myPhoto from "../assets/professional-image.jpg";
         }
       }
     }
-    &-middle {
+    .aboutMe-middle {
       margin-top: 1.5rem;
       font-size: 2rem;
       line-height: 2.5rem;
       letter-spacing: -0.025em;
       font-weight: 400;
     }
-    &-bottom {
+    .aboutMe-bottom {
       font-size: var(--font-size-lg);
       margin-top: 1rem;
     }

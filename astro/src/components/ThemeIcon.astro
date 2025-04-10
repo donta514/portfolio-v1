@@ -5,7 +5,7 @@ import Card from "./Card.astro";
 <Card>
   <div class="themeToggleCard">
     <button id="themeToggle" aria-label="Toggle theme">
-      <svg width="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <!-- Sun Icon -->
         <path
           id="sunIcon"
@@ -23,7 +23,7 @@ import Card from "./Card.astro";
   </div>
 </Card>
 
-<style lang="scss">
+<style>
   .themeToggleCard {
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ import Card from "./Card.astro";
     width: 100%;
     cursor: pointer;
     border-radius: var(--border-radius);
-    padding: var(--padding);
+    /* padding: var(--padding); */
 
     #themeToggle {
       border: none;
@@ -43,7 +43,7 @@ import Card from "./Card.astro";
       justify-content: center;
       transition: transform 0.3s ease-in-out;
 
-      &.theme-transition {
+      .theme-transition {
         transform: rotate(180deg);
       }
     }
@@ -51,6 +51,9 @@ import Card from "./Card.astro";
     svg {
       transition: fill 0.3s ease-in-out;
     }
+  }
+  .themeToggleCard:hover {
+    transform: scale(1.1);
   }
 </style>
 

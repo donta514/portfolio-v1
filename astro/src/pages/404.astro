@@ -14,24 +14,19 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </Layout>
 
-<style lang="scss">
-  .link:hover {
-    background-color: var(--accent);
-    transition: all 0.5s ease 0s;
-  }
-
+<style>
   .page404 {
     display: grid;
     place-items: center;
     height: 100svh;
-    &_title {
+    /* &_title {
       text-align: center;
       .h1 {
         font-family: var(--primary-font);
         color: var(--text-white);
         font-size: var(--font-size-xl);
       }
-    }
+    } */
     .contentBox {
       display: grid;
       gap: 1rem;
@@ -55,6 +50,10 @@ import Layout from "../layouts/Layout.astro";
         font-family: var(--secondary-font);
         text-align: center;
         border-radius: var(--border-radius);
+      }
+      .link:hover {
+        background-color: var(--accent);
+        transition: all 0.5s ease 0s;
       }
     }
   }

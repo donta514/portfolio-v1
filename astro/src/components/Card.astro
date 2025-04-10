@@ -1,7 +1,7 @@
 <div class="card">
   <slot />
 </div>
-<style lang="scss">
+<style>
   .card {
     display: flex;
     height: 100%;
@@ -12,12 +12,12 @@
 
     background: var(--card-bg);
     border-radius: var(--border-radius);
-    &:hover {
-      transition:
-        transform 0.3s,
-        box-shadow 500ms ease;
-      box-shadow: rgba(100, 100, 111, 0.1) 0px 5px 24px 0px;
-      transform: scale(1.02);
-    }
+  }
+  .card:hover {
+    transition:
+      transform 0.3s,
+      box-shadow 500ms ease;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 5px 24px 0px;
+    transform: scale(1.02);
   }
 </style>

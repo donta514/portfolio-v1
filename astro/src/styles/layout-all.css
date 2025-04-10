@@ -1,23 +1,21 @@
-.layout-media {
-    gap: $gap;
+.layout-all {
+    display: grid;
+    gap: 1.25rem;
 
-    .mediaCard,
-    .githubCard,
-    .linkedinCard {
-        transform: scale(1);
-    }
-
-    .aboutMe,
-    .introCard,
     .projectOne,
     .projectTwo,
-    .projectThree {
-        opacity: $opacity;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    .projectThree,
+    .aboutMe,
+    .githubCard,
+    .introCard,
+    .linkedinCard,
+    .mediaCard {
+        transition: opacity 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
         /* Adding transform for smoother interaction */
     }
 
-    @media screen and (min-width: $breakpointSm) {
+    @media screen and (min-width: 576px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
         .aboutMe,
@@ -30,7 +28,7 @@
         }
     }
 
-    @media screen and (min-width: $breakpointMd) {
+    @media screen and (min-width: 768px) {
 
         .projectOne,
         .projectTwo {
@@ -38,7 +36,7 @@
         }
     }
 
-    @media screen and (min-width: $breakpointLg) {
+    @media screen and (min-width: 992px) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: repeat(3, (auto, auto));
 

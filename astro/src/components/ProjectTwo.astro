@@ -17,19 +17,22 @@ import projectTwo from "../assets/project-images/Netflix-App.png";
       <div class="bottom">
         <p class="title">Netflix Clone</p>
         <p class="text">
-          A clone of Netflix with working trailers. Built using React, Styled
-          Components and TMDB movie API.
+          A Netflix-inspired streaming app featuring interactive trailers, built
+          with React, Styled Components, and the TMDB API. This project
+          showcases dynamic UI design, real-time data integration, and a
+          responsive layout that mirrors the user experience of a modern
+          streaming platform.
         </p>
       </div>
     </a>
   </div>
 </Card>
 
-<style lang="scss">
+<style>
   .projectTwo {
     padding: var(--padding);
     overflow: hidden;
-    &-link {
+    .projectTwo-link {
       color: var(--text-color);
       text-decoration: inherit;
       .top {
@@ -50,6 +53,7 @@ import projectTwo from "../assets/project-images/Netflix-App.png";
         .title {
           margin-top: 1.5rem;
           font-weight: 700;
+          font-size: var(--font-size-lg);
         }
         .text {
           margin-top: 1rem;

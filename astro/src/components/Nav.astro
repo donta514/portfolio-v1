@@ -1,5 +1,6 @@
 ---
 import Logo from "../assets/portfolio-logo/1.svg";
+import ThemeIcon from "./ThemeIcon.astro";
 import { Image } from "astro:assets";
 ---
 
@@ -12,10 +13,10 @@ import { Image } from "astro:assets";
     const layoutGrid = document.querySelector(".layout-all");
 
     const positions = {
-      all: { left: 5, width: 54 },
-      about: { left: 59, width: 72 },
-      projects: { left: 138, width: 82 },
-      media: { left: 223, width: 83 },
+      all: { left: 8, width: 54 },
+      about: { left: 61, width: 72 },
+      projects: { left: 141, width: 82 },
+      media: { left: 235, width: 68 },
     };
 
     const layouts = {
@@ -68,14 +69,22 @@ import { Image } from "astro:assets";
     <div class="nav-items about" data-category="about">About</div>
     <div class="nav-items projects" data-category="projects">Projects</div>
     <div class="nav-items media" data-category="media">Media</div>
+    <div class="themeIconCard">
+      <ThemeIcon />
+    </div>
   </div>
   <div class="nav-contact">
-    <a href="/contact" class="link">
+    <!-- <a href="/contact" class="link">
       <p class="text">Contact</p>
-    </a>
+    </a> -->
+    <a
+    class="link"
+      href="mailto:donta.jamel.smith@gmail.com?subject=Contact%20Request"
+      >Contact</a
+    >
   </div>
 </nav>
-<style lang="scss">
+<style>
   nav {
     display: flex;
     flex-direction: column;
@@ -99,14 +108,15 @@ import { Image } from "astro:assets";
     }
     .nav-item {
       background: transparent;
+      align-items: center;
       border: 1px solid var(--border-color);
       border-radius: 23px;
       transform: translateX(0px);
       display: flex;
       font-size: 1rem;
-      padding: 5px;
+      padding: 10px;
       .nav-items-select {
-        left: 5px;
+        left: 8px;
         width: 54px;
         position: absolute;
         height: 32px;
@@ -124,10 +134,11 @@ import { Image } from "astro:assets";
         transition: opacity 0.3s ease 0s;
         color: var(--text-color);
         cursor: pointer;
-        &:hover {
-          cursor: pointer;
-          opacity: 0.5;
-        }
+      }
+      .nav-items:hover {
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.25s ease 0s;
       }
     }
     .nav-contact {
@@ -139,15 +150,15 @@ import { Image } from "astro:assets";
         .text {
           line-height: normal;
         }
-        &:hover {
-          cursor: pointer;
-          opacity: 0.5;
-          transition: opacity 0.25s ease 0s;
-        }
       }
       @media screen and (min-width: 768px) {
         margin-top: 0;
       }
+    }
+    .nav-contact:hover {
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.25s ease 0s;
     }
   }
 </style>
