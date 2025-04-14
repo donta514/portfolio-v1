@@ -1,7 +1,4 @@
----
-import { contactForm } from '../actions/forms/contact';
-const { Form, formAction } = contactForm;
----
+
 
 <div class="go-back">
   <a href="javascript:history.back()" aria-label="Go Back">← Go Back</a>
@@ -9,9 +6,7 @@ const { Form, formAction } = contactForm;
 
 <div class="contact-form">
   <h1>Contact Me</h1>
-  <Form action={formAction} method="POST">
-    <input type="text" name="bot-field" style="display:none" autocomplete="off" />
-
+  <form action="/api/contact" method="POST">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required>
@@ -24,13 +19,12 @@ const { Form, formAction } = contactForm;
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="4" required></textarea>
     </div>
+      <!-- Honeypot (hidden from humans) -->
+      <input type="text" name="website" style="display:none" autocomplete="off" />
     <div class="form-group">
       <button type="submit">Send Message</button>
     </div>
-  </Form>
-
-  {formAction.state.success && <p style="color: green;">Message sent!</p>}
-  {formAction.state.error && <p style="color: red;">{formAction.state.error}</p>}
+  </form>
 </div>
 
 <style>
@@ -146,7 +140,3 @@ const { Form, formAction } = contactForm;
     ring-indigo-500;
   }
 </style>
-
-<script>
-
-</script>
