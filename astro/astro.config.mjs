@@ -1,15 +1,11 @@
 import { defineConfig } from 'astro/config';
+import node from "@astrojs/node";
 import "dotenv/config";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `@import "src/styles/variables";`,
-        },
-      },
-    },
-  },
+  output: "server",
+  adapter: node({
+    mode: "standalone", // best for Docker or direct server use
+  }),
 });
