@@ -4,7 +4,9 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import { ClientRouter } from "astro:transitions";
 import ThemeProvider from "../components/ThemeProvider.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -21,6 +23,7 @@ import ThemeProvider from "../components/ThemeProvider.astro";
     <meta name="theme-color" content="#0d1117" />
     <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <ClientRouter />
     <meta
       name="description"
       content="Dontá Smith is a web developer specializing in creating innovative web experiences. He is based in Washington, D.C."
@@ -34,10 +37,7 @@ import ThemeProvider from "../components/ThemeProvider.astro";
       property="og:description"
       content="Dontá Smith is a web developer specializing in creating innovative web experiences. He is based in Washington, D.C."
     />
-    <meta
-      property="og:image"
-      content="https://donta.us-iad-1.linodeobjects.com/images/portfolio/Donta%CC%81-Smith-Developer-Designer-.png"
-    />
+    <meta property="og:image" content="/public/dontasmith-og-image.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -50,15 +50,13 @@ import ThemeProvider from "../components/ThemeProvider.astro";
       property="twitter:description"
       content="Dontá Smith is a web developer specializing in creating innovative web experiences. He is based in Washington, D.C."
     />
-    <meta
-      property="twitter:image"
-      content="https://donta.us-iad-1.linodeobjects.com/images/portfolio/Donta%CC%81-Smith-Developer-Designer-.png"
-    />
+    <meta property="twitter:image" content="/public/dontasmith-og-image.jpg" />
   </head>
   <body>
     <ThemeProvider>
       <slot />
     </ThemeProvider>
+    <Analytics />
   </body>
 </html>
 <style is:global>

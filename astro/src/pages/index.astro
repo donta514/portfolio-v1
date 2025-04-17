@@ -3,7 +3,6 @@ import "../styles/layout-all.css";
 import "../styles/layout-about.css";
 import "../styles/layout-projects.css";
 import "../styles/layout-media.css";
-// import ThemeIcon from "../components/ThemeIcon.astro";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import AboutMe from "../components/AboutMe.astro";
@@ -18,7 +17,7 @@ import LinkedinCard from "../components/linkedinCard.astro";
 
 <Layout title="Dontá Smith - Developer, Designer.">
   <Nav />
-  <main>
+  <main transition:animate="slide">
     <section class="wrapper">
       <div class="layout-all">
         <div class="aboutMe">
@@ -45,9 +44,6 @@ import LinkedinCard from "../components/linkedinCard.astro";
         <div class="introCard">
           <IntroCard />
         </div>
-        <!-- <div class="themeIconCard">
-          <ThemeIcon />
-        </div> -->
       </div>
     </section>
   </main>

@@ -58,7 +58,7 @@ import Card from "./Card.astro";
 </style>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const themeToggleButton = document.getElementById("themeToggle");
     const sunIcon = document.getElementById("sunIcon");
     const moonIcon = document.getElementById("moonIcon");

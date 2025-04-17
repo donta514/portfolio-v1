@@ -5,51 +5,53 @@ import { Image } from "astro:assets";
 ---
 
 <script>
-  function moveNavSelector() {
-    const navItemSelect = document.querySelector(
-      ".nav-items-select"
-    ) as HTMLElement;
-    const navItems = document.querySelectorAll(".nav-items");
-    const layoutGrid = document.querySelector(".layout-all");
+  document.addEventListener("astro:page-load", () => {
+    function moveNavSelector() {
+      const navItemSelect = document.querySelector(
+        ".nav-items-select"
+      ) as HTMLElement;
+      const navItems = document.querySelectorAll(".nav-items");
+      const layoutGrid = document.querySelector(".layout-all");
 
-    const positions = {
-      all: { left: 8, width: 54 },
-      about: { left: 61, width: 72 },
-      projects: { left: 141, width: 82 },
-      media: { left: 235, width: 68 },
-    };
+      const positions = {
+        all: { left: 8, width: 54 },
+        about: { left: 61, width: 72 },
+        projects: { left: 141, width: 82 },
+        media: { left: 235, width: 68 },
+      };
 
-    const layouts = {
-      all: "layout-all",
-      about: "layout-about",
-      projects: "layout-projects",
-      media: "layout-media",
-    };
+      const layouts = {
+        all: "layout-all",
+        about: "layout-about",
+        projects: "layout-projects",
+        media: "layout-media",
+      };
 
-    navItems.forEach((navItem) => {
-      navItem.addEventListener("click", function () {
-        const clickedItem = this.classList[1] as keyof typeof positions;
-        const { left, width } = positions[clickedItem] || {};
+      navItems.forEach((navItem) => {
+        navItem.addEventListener("click", function () {
+          const clickedItem = this.classList[1] as keyof typeof positions;
+          const { left, width } = positions[clickedItem] || {};
 
-        if (left !== undefined && width !== undefined) {
-          navItemSelect.style.left = `${left}px`;
-          navItemSelect.style.width = `${width}px`;
-          navItemSelect.style.transition = "left 0.3s, width 0.3s";
-        }
+          if (left !== undefined && width !== undefined) {
+            navItemSelect.style.left = `${left}px`;
+            navItemSelect.style.width = `${width}px`;
+            navItemSelect.style.transition = "left 0.3s, width 0.3s";
+          }
 
-        // Update the card layout by switching classes
-        Object.values(layouts).forEach((layout) => {
-          layoutGrid.classList.remove(layout); // Remove all layout classes
+          // Update the card layout by switching classes
+          Object.values(layouts).forEach((layout) => {
+            layoutGrid.classList.remove(layout); // Remove all layout classes
+          });
+
+          if (layouts[clickedItem]) {
+            layoutGrid.classList.add(layouts[clickedItem]); // Apply the selected layout class
+          }
         });
-
-        if (layouts[clickedItem]) {
-          layoutGrid.classList.add(layouts[clickedItem]); // Apply the selected layout class
-        }
       });
-    });
-  }
+    }
 
-  moveNavSelector();
+    moveNavSelector();
+  });
 </script>
 
 <nav>
@@ -74,14 +76,14 @@ import { Image } from "astro:assets";
     </div>
   </div>
   <div class="nav-contact">
-    <!-- <a href="/contact" class="link">
+    <a href="/contact" class="link">
       <p class="text">Contact</p>
-    </a> -->
-    <a
+    </a>
+    <!-- <a
     class="link"
       href="mailto:donta.jamel.smith@gmail.com?subject=Contact%20Request"
       >Contact</a
-    >
+    > -->
   </div>
 </nav>
 <style>

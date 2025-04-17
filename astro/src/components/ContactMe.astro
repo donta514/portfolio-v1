@@ -1,10 +1,11 @@
-<!-- <div class="go-back">
+<div class="go-back">
   <a href="javascript:history.back()" aria-label="Go Back">← Go Back</a>
 </div>
 
 <div class="contact-form">
   <h1>Contact Me</h1>
-  <form action="/api/contact" method="POST">
+  <form method="POST" id="form">
+    <input type="hidden" name="access_key" value="4505303a-973d-4d95-bfba-b3ed009d0510">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required>
@@ -17,10 +18,10 @@
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="4" required></textarea>
     </div>
-      <input type="text" name="website" style="display:none" autocomplete="off" />
     <div class="form-group">
       <button type="submit">Send Message</button>
     </div>
+    <div id="result"></div>
   </form>
 </div>
 
@@ -40,6 +41,10 @@
 
   .go-back a:hover {
     text-decoration: underline;
+  }
+
+  #result {
+    color: var(--button-bg);
   }
 
   .contact-form {
@@ -135,4 +140,48 @@
     ring-offset: 2px;
     ring-indigo-500;
   }
-</style> -->
+</style>
+
+<script is:inline>
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Sending message..."
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = json.message;
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+        })
+        .then(function() {
+            form.reset();
+            
+            setTimeout(() => {
+                window.location.replace("/thanks");
+            }, 1000);
+        });
+});
+</script>
